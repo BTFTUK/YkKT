@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.yk.demo.wan.android.ui.widget.TopBarView
+        android:id="@+id/top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tbv_middle_text="设置" />
+
+    <com.yk.demo.wan.android.ui.widget.CommonItemView
+        app:layout_constraintTop_toBottomOf="@+id/top"
+        android:id="@+id/civ_about"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_40"
+        app:pciv_left_text="关于"
+        android:layout_marginTop="@dimen/dp_10"
+        app:pciv_right_icon="@mipmap/icon_arrow_right"/>
+
+    <Button
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/btn_logout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/shape_login_btn_bg"
+        android:text="@string/logout"
+        android:textColor="@color/white"
+        android:textSize="16sp"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="pciv_id" type="id"/>
+    <item name="pciv_gl" type="id"/>
+    <item name="left_text_view" type="id"/>
+    <item name="right_text_view" type="id"/>
+    <item name="mid_text_view" type="id"/>
+    <item name="right_image_view" type="id"/>
+    <item name="left_image_view" type="id"/>
+    <item name="cev_edit" type="id"/>
+    <item name="cev_iv_clear" type="id"/>
+    <item name="cev_right_tv" type="id"/>
+    <item name="cev_left_tv" type="id"/>
+    <item name="cev_bottom_line" type="id"/>
+    <item name="civ_bottom_line" type="id"/>
+</resources>

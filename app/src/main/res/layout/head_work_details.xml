@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/c_f8">
+
+    <TextView
+        android:id="@+id/tv_department"
+        style="@style/ts_00_14"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_10"
+        android:background="@color/white"
+        android:padding="15dp"
+        android:text="@string/department"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_name"
+        style="@style/ts_00_14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="15dp"
+        android:text="@string/user_name"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_department"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tv_department" />
+
+    <TextView
+        android:id="@+id/tv_demand_use"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/dp_10"
+        android:background="@color/white"
+        android:paddingStart="@dimen/dp_15"
+        android:paddingTop="@dimen/dp_15"
+        android:text="需求用途"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_demand_use_str"
+        app:layout_constraintStart_toStartOf="@+id/tv_department"
+        app:layout_constraintTop_toBottomOf="@+id/tv_department" />
+
+    <TextView
+        android:id="@+id/tv_demand_use_str"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:background="@color/white"
+        android:paddingTop="@dimen/dp_15"
+        android:paddingEnd="@dimen/dp_15"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tv_demand_use"
+        app:layout_constraintTop_toTopOf="@+id/tv_demand_use" />
+
+    <TextView
+        android:id="@+id/tv_product_form"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:background="@color/white"
+        android:paddingStart="@dimen/dp_15"
+        android:paddingTop="@dimen/dp_15"
+        android:text="产品形态"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_product_form_str"
+        app:layout_constraintStart_toStartOf="@+id/tv_department"
+        app:layout_constraintTop_toBottomOf="@+id/barrier" />
+
+    <TextView
+        android:id="@+id/tv_product_form_str"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:background="@color/white"
+        android:paddingTop="@dimen/dp_15"
+        android:paddingEnd="@dimen/dp_15"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tv_product_form"
+        app:layout_constraintTop_toTopOf="@+id/tv_product_form" />
+
+    <TextView
+        android:id="@+id/tv_skills_requirement"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:background="@color/white"
+        android:paddingStart="@dimen/dp_15"
+        android:paddingTop="@dimen/dp_15"
+        android:text="技术要求"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_skills_requirement_str"
+        app:layout_constraintStart_toStartOf="@+id/tv_department"
+        app:layout_constraintTop_toBottomOf="@+id/barrier2" />
+
+    <TextView
+        android:id="@+id/tv_skills_requirement_str"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:background="@color/white"
+        android:paddingTop="@dimen/dp_15"
+        android:paddingEnd="@dimen/dp_15"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tv_skills_requirement"
+        app:layout_constraintTop_toTopOf="@+id/tv_skills_requirement" />
+
+    <TextView
+        android:id="@+id/tv_expected_completion_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:paddingStart="@dimen/dp_15"
+        android:paddingTop="@dimen/dp_15"
+        android:paddingEnd="@dimen/dp_15"
+        android:text="期望时间"
+        app:layout_constraintStart_toStartOf="@+id/tv_department"
+        app:layout_constraintTop_toBottomOf="@+id/barrier3" />
+
+    <TextView
+        android:id="@+id/tv_remark"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:paddingStart="@dimen/dp_15"
+        android:paddingTop="@dimen/dp_15"
+        android:paddingEnd="@dimen/dp_15"
+        android:paddingBottom="@dimen/dp_15"
+        android:text="备注说明"
+        app:layout_constraintStart_toStartOf="@+id/tv_department"
+        app:layout_constraintTop_toBottomOf="@+id/tv_expected_completion_time" />
+
+    <TextView
+        android:id="@+id/tv_estimate"
+        style="@style/ts_00_14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="预计交付时间"
+        android:paddingStart="@dimen/dp_15"
+        android:paddingTop="@dimen/dp_10"
+        android:paddingEnd="@dimen/dp_15"
+        android:paddingBottom="@dimen/dp_10"
+        app:layout_constraintStart_toStartOf="@+id/tv_department"
+        app:layout_constraintTop_toBottomOf="@+id/tv_remark" />
+
+    <TextView
+        android:id="@+id/tv_over_due_order"
+        android:layout_width="50dp"
+        android:layout_height="18dp"
+        android:textColor="@color/c_day15"
+        android:textSize="9sp"
+        android:text="工单逾期"
+        android:visibility="gone"
+        android:gravity="center"
+        android:layout_marginStart="5dp"
+        android:background="@drawable/shape_work_dstage_status_15days_bg"
+        app:layout_constraintTop_toTopOf="@+id/tv_estimate"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_estimate"
+        app:layout_constraintStart_toEndOf="@+id/tv_estimate" />
+
+    <TextView
+        android:id="@+id/tv_work_order_circulation"
+        style="@style/ts_00_14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/dp_15"
+        android:paddingTop="@dimen/dp_10"
+        android:paddingEnd="@dimen/dp_15"
+        android:paddingBottom="@dimen/dp_10"
+        android:text="工单流转"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_estimate" />
+
+    <View
+        style="@style/common_line"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_remark" />
+
+    <View
+        style="@style/common_line"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_estimate" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierAllowsGoneWidgets="true"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="tv_product_form
+        ,tv_product_form_str"/>
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierAllowsGoneWidgets="true"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="tv_demand_use
+        ,tv_demand_use_str"/>
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierAllowsGoneWidgets="true"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="tv_skills_requirement
+        ,tv_skills_requirement_str"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

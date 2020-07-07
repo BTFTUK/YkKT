@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="listener"
+            type="com.yk.demo.wan.android.base.OnItemClickListener" />
+
+        <variable
+            name="longClickListener"
+            type="com.yk.demo.wan.android.base.OnItemLongClickListener" />
+
+        <variable
+            name="adapter"
+            type="com.yk.demo.wan.android.ui.wxchapterlist.WxChapterListAdapter" />
+
+        <variable
+            name="refreshColor"
+            type="Integer" />
+
+        <variable
+            name="refreshing"
+            type="Boolean" />
+
+        <variable
+            name="refreshListener"
+            type="androidx.swiperefreshlayout.widget.SwipeRefreshLayout.OnRefreshListener" />
+
+        <variable
+            name="wxChapter"
+            type="String" />
+
+        <variable
+            name="searchMode"
+            type="Boolean" />
+
+        <variable
+            name="errorStatus"
+            type="Boolean" />
+
+        <variable
+            name="emptyStatus"
+            type="Boolean" />
+
+        <variable
+            name="loadingStatus"
+            type="Boolean" />
+
+        <variable
+            name="errorReload"
+            type="com.yk.demo.wan.android.ui.widget.ErrorReload" />
+
+        <variable
+            name="gesture"
+            type="com.yk.demo.wan.android.base.DoubleClickListener" />
+
+        <variable
+            name="editAction"
+            type="android.widget.TextView.OnEditorActionListener" />
+
+        <variable
+            name="searchGesture"
+            type="com.yk.demo.wan.android.base.DoubleClickListener" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include layout="@layout/include_status_bar" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary">
+
+            <TextView
+                android:id="@+id/wx_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="12dp"
+                android:text="@{wxChapter}"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:visibility="@{searchMode ? View.INVISIBLE : View.VISIBLE}"
+                bind:gesture="@{gesture}"
+                tools:text="鸿洋" />
+
+            <EditText
+                android:id="@+id/wx_search"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/search_bg"
+                android:drawableStart="@drawable/ic_search_grey_18dp"
+                android:drawablePadding="8dp"
+                android:ellipsize="start"
+                android:gravity="center_vertical"
+                android:hint="@string/search_hint"
+                android:imeOptions="actionSearch"
+                android:inputType="text"
+                android:padding="8dp"
+                android:singleLine="true"
+                android:textColor="@android:color/black"
+                android:textSize="14sp"
+                android:visibility="@{searchMode ? View.VISIBLE : View.INVISIBLE}"
+                bind:editAction="@{editAction}"
+                tools:ignore="Autofill,LabelFor" />
+        </FrameLayout>
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swipe"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            bind:refreshColor="@{refreshColor}"
+            bind:refreshListener="@{refreshListener}"
+            bind:refreshState="@{refreshing}">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/chapter_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scrollbarThumbVertical="@drawable/custom_scroll_bar"
+                    android:scrollbars="vertical"
+                    android:visibility="@{errorStatus || loadingStatus || emptyStatus ? View.GONE : View.VISIBLE}"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    bind:adapter="@{adapter}"
+                    bind:hasFixedSize="@{true}"
+                    bind:pageItemClick="@{listener}"
+                    bind:pageItemLongClick="@{longClickListener}"
+                    tools:itemCount="20"
+                    tools:listitem="@layout/recycler_wx_chapter_list" />
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|end"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="30dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:src="@drawable/ic_search_white_24dp"
+                    app:fabSize="mini"
+                    bind:gesture="@{searchGesture}" />
+
+                <com.yk.demo.wan.android.ui.widget.StatusError
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="@{errorStatus ? View.VISIBLE : View.GONE}"
+                    bind:reload="@{errorReload}" />
+
+                <com.yk.demo.wan.android.ui.widget.StatusEmpty
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="@{emptyStatus ? View.VISIBLE : View.GONE}" />
+
+                <com.yk.demo.wan.android.ui.widget.StatusLoading
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="@{loadingStatus ? View.VISIBLE : View.GONE}" />
+            </FrameLayout>
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+    </LinearLayout>
+</layout>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="BottomDrawerLayout">
+        <attr name="minShownHeight" format="dimension" />
+    </declare-styleable>
+	
+	<declare-styleable name="CommonItemView">
+        <attr name="pciv_left_text" format="string" />
+        <attr name="pciv_left_text_color" format="color" />
+        <attr name="pciv_left_text_size" format="dimension" />
+        <attr name="pciv_mid_text" format="string" />
+        <attr name="pciv_mid_text_color" format="color" />
+        <attr name="pciv_mid_hint_color" format="color" />
+        <attr name="pciv_mid_text_size" format="dimension" />
+        <attr name="pciv_mid_text_margin_left" format="dimension" />
+        <attr name="pciv_mid_text_margin_right" format="dimension" />
+        <attr name="pciv_right_text" format="string" />
+        <attr name="pciv_right_text_color" format="color" />
+        <attr name="pciv_right_text_size" format="dimension" />
+        <attr name="pciv_left_icon" format="reference" />
+        <attr name="pciv_left_icon_margin_left" format="dimension" />
+        <attr name="pciv_left_icon_margin_right" format="dimension" />
+        <attr name="pciv_right_icon" format="reference" />
+        <attr name="pciv_right_icon_text_margin" format="dimension" />
+        <attr name="pciv_right_icon_margin_right" format="dimension" />
+        <attr name="pciv_left_text_margin_left" format="dimension" />
+        <attr name="pciv_right_text_margin_right" format="dimension" />
+        <attr name="pciv_bottom_line" format="boolean" />
+        <attr name="pciv_mid_is_edit" format="boolean"/>
+        <attr name="pciv_mid_is_right" format="boolean"/>
+        <attr name="pciv_mid_hint" format="string" />
+        <attr name="pciv_mid_inputType">
+            <enum name="normal" value="0" />
+            <enum name="phone" value="1" />
+            <enum name="pwd" value="2" />
+            <enum name="pwd_pay" value="3" />
+            <enum name="fixed" value="4" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="TopBarView">
+        <attr name="tbv_right_icon" format="reference" />
+        <attr name="tbv_left_icon" format="reference" />
+        <attr name="tbv_middle_text" format="string" />
+        <attr name="tbv_middle_text_size" format="dimension" />
+        <attr name="tbv_middle_text_color" format="color" />
+        <attr name="tbv_middle_icon" format="reference" />
+        <attr name="tbv_show_middle_icon" format="boolean" />
+        <attr name="tbv_hide_right" format="boolean" />
+        <attr name="tbv_hide_left" format="boolean" />
+        <attr name="tbv_bg_color" format="color" />
+    </declare-styleable>
+</resources>

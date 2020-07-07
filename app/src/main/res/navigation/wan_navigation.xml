@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/wan_navigation"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.yk.demo.wan.android.ui.main.MainFragment"
+        android:label="MainFragment"
+        tools:layout="@layout/fragment_main">
+        <action
+            android:id="@+id/action_mainFragment_to_websiteDetailFragment"
+            app:destination="@id/websiteDetailFragment"
+            app:enterAnim="@anim/slide_right_in"
+            app:exitAnim="@anim/slide_left_out"
+            app:popEnterAnim="@anim/slide_left_in"
+            app:popExitAnim="@anim/slide_right_out" />
+        <action
+            android:id="@+id/action_mainFragment_to_searchFragment"
+            app:destination="@id/searchFragment"
+            app:enterAnim="@anim/slide_right_in"
+            app:exitAnim="@anim/slide_left_out"
+            app:popEnterAnim="@anim/slide_left_in"
+            app:popExitAnim="@anim/slide_right_out" />
+        <action
+            android:id="@+id/action_mainFragment_to_wxChapterListFragment"
+            app:destination="@id/wxChapterListFragment"
+            app:enterAnim="@anim/slide_right_in"
+            app:exitAnim="@anim/slide_left_out"
+            app:popEnterAnim="@anim/slide_left_in"
+            app:popExitAnim="@anim/slide_right_out" />
+        <action
+            android:id="@+id/action_mainFragment_to_collectionFragment"
+            app:destination="@id/collectionFragment"
+            app:enterAnim="@anim/slide_right_in"
+            app:exitAnim="@anim/slide_left_out"
+            app:popEnterAnim="@anim/slide_left_in"
+            app:popExitAnim="@anim/slide_right_out" />
+        <action
+            android:id="@+id/action_mainFragment_to_todoListFragment"
+            app:destination="@id/todoListFragment"
+            app:enterAnim="@anim/slide_right_in"
+            app:exitAnim="@anim/slide_left_out"
+            app:popEnterAnim="@anim/slide_left_in"
+            app:popExitAnim="@anim/slide_right_out" />
+        <action
+            android:id="@+id/action_mainFragment_to_coinFragment"
+            app:destination="@id/coinFragment"
+            app:enterAnim="@anim/slide_right_in"
+            app:exitAnim="@anim/slide_left_out"
+            app:popEnterAnim="@anim/slide_left_in"
+            app:popExitAnim="@anim/slide_right_out" />
+        <action
+            android:id="@+id/action_mainFragment_to_sharedUserFragment"
+            app:destination="@id/sharedUserFragment"
+            app:enterAnim="@anim/slide_right_in"
+            app:exitAnim="@anim/slide_left_out"
+            app:popEnterAnim="@anim/slide_left_in"
+            app:popExitAnim="@anim/slide_right_out" />
+        <action
+            android:id="@+id/action_mainFragment_to_userShareListFragment"
+            app:destination="@id/userShareListFragment"
+            app:enterAnim="@anim/slide_right_in"
+            app:exitAnim="@anim/slide_left_out"
+            app:popEnterAnim="@anim/slide_left_in"
+            app:popExitAnim="@anim/slide_right_out" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/websiteDetailFragment"
+        android:name="com.yk.demo.wan.android.ui.websitedetail.WebsiteDetailFragment"
+        android:label="WebsiteDetailFragment"
+        tools:layout="@layout/fragment_wesite_detail" />
+
+    <fragment
+        android:id="@+id/wxChapterListFragment"
+        android:name="com.yk.demo.wan.android.ui.wxchapterlist.WxChapterListFragment"
+        android:label="WxChapterListFragment"
+        tools:layout="@layout/fragment_wx_chapter_list">
+        <action
+            android:id="@+id/action_wxChapterListFragment_to_websiteDetailFragment"
+            app:destination="@id/websiteDetailFragment"
+            app:enterAnim="@anim/slide_right_in"
+            app:exitAnim="@anim/slide_left_out"
+            app:popEnterAnim="@anim/slide_left_in"
+            app:popExitAnim="@anim/slide_right_out" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.yk.demo.wan.android.ui.search.SearchFragment"
+        android:label="SearchFragment"
+        tools:layout="@layout/fragment_search">
+        <action
+            android:id="@+id/action_searchFragment_to_websiteDetailFragment"
+            app:destination="@id/websiteDetailFragment"
+            app:enterAnim="@anim/slide_right_in"
+            app:exitAnim="@anim/slide_left_out"
+            app:popEnterAnim="@anim/slide_left_in"
+            app:popExitAnim="@anim/slide_right_out" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/collectionFragment"
+        android:name="com.yk.demo.wan.android.ui.collection.CollectionFragment"
+        android:label="CollectionFragment"
+        tools:layout="@layout/fragment_collection">
+        <action
+            android:id="@+id/action_collectionFragment_to_websiteDetailFragment"
+            app:destination="@id/websiteDetailFragment"
+            app:enterAnim="@anim/slide_right_in"
+            app:exitAnim="@anim/slide_left_out"
+            app:popEnterAnim="@anim/slide_left_in"
+            app:popExitAnim="@anim/slide_right_out" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/todoListFragment"
+        android:name="com.yk.demo.wan.android.ui.todolist.TodoListFragment"
+        android:label="TodoListFragment"
+        tools:layout="@layout/fragment_todo_list">
+        <action
+            android:id="@+id/action_todoListFragment_to_todoEditFragment"
+            app:destination="@id/todoEditFragment"
+            app:enterAnim="@anim/slide_right_in"
+            app:exitAnim="@anim/slide_left_out"
+            app:popEnterAnim="@anim/slide_left_in"
+            app:popExitAnim="@anim/slide_right_out" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/todoEditFragment"
+        android:name="com.yk.demo.wan.android.ui.todoedit.TodoEditFragment"
+        android:label="TodoEditFragment"
+        tools:layout="@layout/fragment_todo_edit" />
+
+    <fragment
+        android:id="@+id/coinFragment"
+        android:name="com.yk.demo.wan.android.ui.coins.CoinFragment"
+        android:label="CoinFragment"
+        tools:layout="@layout/fragment_coins" />
+
+    <fragment
+        android:id="@+id/sharedUserFragment"
+        android:name="com.yk.demo.wan.android.ui.shareduser.SharedUserFragment"
+        android:label="SharedUserFragment"
+        tools:layout="@layout/fragment_shared_user">
+        <action
+            android:id="@+id/action_sharedUserFragment_to_websiteDetailFragment"
+            app:destination="@id/websiteDetailFragment"
+            app:enterAnim="@anim/slide_right_in"
+            app:exitAnim="@anim/slide_left_out"
+            app:popEnterAnim="@anim/slide_left_in"
+            app:popExitAnim="@anim/slide_right_out" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/userShareListFragment"
+        android:name="com.yk.demo.wan.android.ui.usersharelist.UserShareListFragment"
+        android:label="UserShareListFragment"
+        tools:layout="@layout/fragment_user_share_list">
+        <action
+            android:id="@+id/action_userShareListFragment_to_websiteDetailFragment"
+            app:destination="@id/websiteDetailFragment"
+            app:enterAnim="@anim/slide_right_in"
+            app:exitAnim="@anim/slide_left_out"
+            app:popEnterAnim="@anim/slide_left_in"
+            app:popExitAnim="@anim/slide_right_out" />
+    </fragment>
+
+</navigation>

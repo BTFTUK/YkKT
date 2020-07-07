@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="category"
+            type="com.yk.demo.wan.android.entity.ProjectCategoryData" />
+
+        <variable
+            name="selected"
+            type="Boolean" />
+    </data>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="8dp"
+        android:singleLine="true"
+        bind:renderHtml="@{category.name}"
+        android:textColor="@{selected ? @color/colorAccent : @android:color/black }"
+        android:textSize="14sp"
+        tools:text="完整项目" />
+</layout>

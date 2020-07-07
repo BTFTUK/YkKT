@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.yk.demo.wan.android.ui.widget.TopBarView
+        android:id="@+id/top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="1dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tbv_middle_text="工单录入" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@color/white"
+                android:padding="17dp">
+
+                <TextView
+                    style="@style/ts_00_16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="申请部门" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/dept_name"
+                    style="@style/ts_00_16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:text="应用软件" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:background="@color/white"
+                android:padding="17dp">
+
+                <TextView
+                    style="@style/ts_00_16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="申请人" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/user_name"
+                    style="@style/ts_00_16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:text="林凯" />
+            </RelativeLayout>
+
+            <TextView
+                style="@style/ts_00_16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="17dp"
+                android:text="需求用途" />
+
+            <com.sgd.dmnd.app.widget.PLEditText
+                android:id="@+id/edit_dpurpose"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="@color/white"
+                android:gravity="top"
+                android:hint="请输入"
+                android:padding="17dp" />
+
+            <TextView
+                style="@style/ts_00_16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="17dp"
+                android:text="技术要求" />
+
+            <com.sgd.dmnd.app.widget.PLEditText
+                android:id="@+id/edit_technology"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="@color/white"
+                android:gravity="top"
+                android:hint="请输入"
+                android:padding="17dp" />
+
+            <TextView
+                style="@style/ts_00_16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="17dp"
+                android:text="产品形态" />
+
+            <com.sgd.dmnd.app.widget.PLEditText
+                android:id="@+id/edit_product"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="@color/white"
+                android:gravity="top"
+                android:hint="请输入"
+                android:padding="17dp"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/tv_chip_one"
+                style="@style/ts_00_16"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@color/white"
+                android:drawableRight="@mipmap/icon_add"
+                android:gravity="center_vertical"
+                android:paddingStart="30dp"
+                android:paddingEnd="30dp"
+                android:text="SC3105芯片方案" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_chip_content_one"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/dp_10"/>
+
+            <TextView
+                android:id="@+id/tv_chip_tow"
+                style="@style/ts_00_16"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@color/white"
+                android:drawableRight="@mipmap/icon_add"
+                android:gravity="center_vertical"
+                android:paddingStart="30dp"
+                android:paddingEnd="30dp"
+                android:text="HI3911芯片方案" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_chip_content_tow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/dp_10"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:background="@color/white"
+                android:padding="17dp">
+
+                <TextView
+                    style="@style/ts_00_16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="期望完成时间" />
+
+
+                <TextView
+                    android:id="@+id/expect_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:hint="请选择"
+                    android:textSize="14dp" />
+
+            </RelativeLayout>
+
+            <TextView
+                style="@style/ts_00_16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="17dp"
+                android:text="备注" />
+
+            <com.sgd.dmnd.app.widget.PLEditText
+                android:id="@+id/edit_note"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="@color/white"
+                android:gravity="top"
+                android:hint="请输入"
+                android:padding="17dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:padding="17dp">
+
+                <TextView
+                    android:id="@+id/tv_save"
+                    style="@style/ts_00_12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/shape_work_item_btn_bg"
+                    android:paddingLeft="18dp"
+                    android:paddingTop="5dp"
+                    android:paddingEnd="18dp"
+                    android:paddingBottom="5dp"
+                    android:text="保存" />
+
+                <TextView
+                    android:id="@+id/tv_submit"
+                    style="@style/ts_00_12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:background="@drawable/shape_work_item_btn_bg"
+                    android:paddingLeft="18dp"
+                    android:paddingTop="5dp"
+                    android:paddingEnd="18dp"
+                    android:paddingBottom="5dp"
+                    android:text="提交" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>

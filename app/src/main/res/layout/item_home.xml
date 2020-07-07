@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="20dp"
+    android:gravity="center">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/image_item_home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/icon_finish" />
+
+        <TextView
+            android:id="@+id/number_item_home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/image_item_home"
+            android:text="123" />
+
+        <TextView
+            android:id="@+id/state_item_home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/number_item_home"
+            android:layout_toEndOf="@+id/image_item_home"
+            android:layout_marginTop="4dp"
+            android:text="评审中"
+            android:textColor="@color/black" />
+
+    </RelativeLayout>
+
+</LinearLayout>

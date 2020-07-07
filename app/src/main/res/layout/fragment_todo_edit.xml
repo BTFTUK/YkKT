@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="holder"
+            type="com.yk.demo.wan.android.ui.todoedit.TodoEditFragment" />
+
+        <variable
+            name="title"
+            type="String" />
+
+        <variable
+            name="btnText"
+            type="String" />
+
+        <variable
+            name="newDate"
+            type="String" />
+
+        <variable
+            name="todoTypeStr"
+            type="String" />
+
+        <variable
+            name="todoPriorityStr"
+            type="String" />
+
+        <variable
+            name="todoPriorityColor"
+            type="Integer" />
+
+        <variable
+            name="todo"
+            type="com.yk.demo.wan.android.entity.TodoInfo" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include layout="@layout/include_status_bar" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
+            android:padding="12dp"
+            android:text="@{title}"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            tools:text="新增/编辑" />
+
+        <EditText
+            android:id="@+id/todo_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="12dp"
+            android:background="@drawable/input_bg"
+            android:ellipsize="start"
+            android:hint="@string/todo_title_hint"
+            android:inputType="text"
+            android:padding="12dp"
+            android:singleLine="true"
+            android:text='@{todo == null ? "" : todo.title}'
+            android:textSize="16sp"
+            tools:ignore="Autofill" />
+
+        <EditText
+            android:id="@+id/todo_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="12dp"
+            android:background="@drawable/input_bg"
+            android:ellipsize="start"
+            android:gravity="top"
+            android:hint="@string/todo_description_hint"
+            android:inputType="textMultiLine"
+            android:maxLines="4"
+            android:minLines="4"
+            android:padding="12dp"
+            android:text='@{todo == null ? "" : todo.content}'
+            android:textSize="16sp"
+            tools:ignore="Autofill" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp">
+
+            <TextView
+                android:id="@+id/todo_date"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dp"
+                android:layout_weight="1"
+                android:background="@drawable/ripple_select"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:onClick="@{holder::datePick}"
+                android:paddingTop="12dp"
+                android:paddingBottom="12dp"
+                android:text="@{todo == null ? newDate : todo.dateStr}"
+                android:textColor="@android:color/black"
+                android:textSize="16sp"
+                tools:text="2019-08-02" />
+
+            <TextView
+                android:id="@+id/todo_type"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="4dp"
+                android:layout_weight="1"
+                android:background="@drawable/ripple_select"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:onClick="@{holder::typePick}"
+                android:paddingTop="12dp"
+                android:paddingBottom="12dp"
+                android:text="@{todoTypeStr}"
+                android:textColor="@android:color/black"
+                android:textSize="16sp"
+                tools:text="只用这一个" />
+
+            <TextView
+                android:id="@+id/todo_priority"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_weight="1"
+                android:background="@drawable/ripple_select"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:onClick="@{holder::priorityPick}"
+                android:paddingTop="12dp"
+                android:paddingBottom="12dp"
+                android:text="@{todoPriorityStr}"
+                android:textColor="@{todoPriorityColor}"
+                android:textSize="16sp"
+                tools:text="重要"
+                tools:textColor="@android:color/holo_red_dark" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="12dp"
+            android:background="@drawable/ripple_new_todo"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:onClick="@{holder::updateOrAddTodo}"
+            android:padding="12dp"
+            android:text="@{btnText}"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            tools:text="创建" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="12dp"
+            android:background="@drawable/ripple_delete"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:onClick="@{holder::deleteTodo}"
+            android:padding="12dp"
+            android:text="@string/delete"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            android:visibility="@{todo == null ? View.GONE : View.VISIBLE}" />
+    </LinearLayout>
+</layout>

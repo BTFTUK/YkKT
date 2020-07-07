@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:id="@+id/fl_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tab" />
+
+    <com.sgd.dmnd.app.widget.NoSlidingViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/stl_tab"/>
+
+    <com.flyco.tablayout.SlidingTabLayout
+        android:id="@+id/stl_tab"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_40"
+        android:background="@color/white"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tl_indicator_height="2dp"
+        app:tl_indicator_width="@dimen/dp_20"
+        app:tl_tab_space_equal="true"
+        app:tl_textsize="@dimen/sp_14"
+        app:tl_underline_color="@color/c_f5"
+        app:tl_underline_gravity="BOTTOM"
+        app:tl_underline_height="1dp"
+        app:tl_indicator_color="@color/colorAccent"
+        app:tl_textSelectColor="@color/colorAccent"
+        app:tl_textUnselectColor="@color/c_80" />
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tab"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/white"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tabIndicator="@drawable/shape_tab_indicator"
+        app:tabIndicatorAnimationDuration="0"
+        app:tabRippleColor="@null"
+        app:tabSelectedTextColor="@color/colorAccent"
+        app:tabTextAppearance="@android:style/TextAppearance.Widget.TabWidget" />
+</androidx.constraintlayout.widget.ConstraintLayout>

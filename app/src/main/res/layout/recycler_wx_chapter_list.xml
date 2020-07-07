@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="data"
+            type="com.yk.demo.wan.android.entity.WxChapterListDatas" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="4dp"
+        app:cardCornerRadius="8dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp">
+
+            <TextView
+                android:id="@+id/chapter_article_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/black"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                bind:renderHtml="@{data.title}"
+                tools:text="是什么让我们阅读RxJava源码如此艰难？" />
+
+            <TextView
+                android:id="@+id/chapter_author"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/chapter_article_title"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="4dp"
+                android:text="@{data.author}"
+                android:textSize="12sp"
+                android:visibility="@{data.author == null ? View.GONE : View.VISIBLE }"
+                tools:text="鸿洋" />
+
+            <TextView
+                android:id="@+id/chapter_article_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/chapter_author"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="4dp"
+                android:text="@{data.niceDate}"
+                android:textSize="12sp"
+                tools:text="2019-06-06" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/chapter_article_time"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_rec" />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="holder"
+            type="com.yk.demo.wan.sudoku.ui.SudokuFragment" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.yk.demo.wan.sudoku.ui.GirdView
+            android:id="@+id/gv"
+            android:layout_width="match_parent"
+            android:layout_height="380dp"
+            android:layout_marginTop="@dimen/dp_20"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/ll_nums"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@+id/gv">
+
+            <TextView
+                android:id="@+id/tv_1"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:onClick="@{holder::onClickNum}"
+                android:text="1"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/tv_2"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:onClick="@{holder::onClickNum}"
+                android:text="2"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/tv_3"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:onClick="@{holder::onClickNum}"
+                android:text="3"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/tv_4"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:onClick="@{holder::onClickNum}"
+                android:text="4"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/tv_5"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:onClick="@{holder::onClickNum}"
+                android:text="5"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/tv_6"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:onClick="@{holder::onClickNum}"
+                android:text="6"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/tv_7"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:onClick="@{holder::onClickNum}"
+                android:text="7"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/tv_8"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:onClick="@{holder::onClickNum}"
+                android:text="8"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/tv_9"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:onClick="@{holder::onClickNum}"
+                android:text="9"
+                android:textSize="25sp" />
+
+
+        </LinearLayout>
+
+        <Switch
+            android:id="@+id/switch_input"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            android:checked="true"
+            android:text="输入模式"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ll_nums" />
+
+        <Switch
+            android:id="@+id/show_note"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            android:text="显示笔记"
+            android:checked="true"
+            app:layout_constraintStart_toEndOf="@+id/switch_input"
+            app:layout_constraintTop_toBottomOf="@+id/ll_nums" />
+
+        <Button
+            android:id="@+id/btn_note"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{holder::note}"
+            android:text="笔记所有"
+            app:layout_constraintStart_toStartOf="@+id/switch_input"
+            app:layout_constraintTop_toBottomOf="@+id/switch_input" />
+
+        <Button
+            android:id="@+id/btn_clear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{holder::go}"
+            android:text="清除"
+            app:layout_constraintStart_toStartOf="@+id/switch_input"
+            app:layout_constraintTop_toBottomOf="@+id/btn_note" />
+
+        <Button
+            android:id="@+id/btn_run"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{holder::run}"
+            android:text="计算"
+            app:layout_constraintStart_toStartOf="@+id/switch_input"
+            app:layout_constraintTop_toBottomOf="@+id/btn_clear" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{holder::clear}"
+            android:text="清空"
+            app:layout_constraintStart_toStartOf="@+id/btn_save"
+            app:layout_constraintTop_toBottomOf="@+id/btn_save" />
+
+        <Button
+            android:id="@+id/btn_save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{holder::save}"
+            android:text="保存"
+            app:layout_constraintStart_toEndOf="@+id/btn_note"
+            app:layout_constraintTop_toTopOf="@+id/btn_note" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

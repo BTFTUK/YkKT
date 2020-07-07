@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FF00BCD4</color>
+    <color name="colorAccent">#FFD81B60</color>
+
+    <color name="line_half_gray_color">#77AAAAAA</color>
+    <color name="half_red">#AAFF0000</color>
+    <color name="half_black">#77000000</color>
+    <color name="label_color">#33BBBBBB</color>
+    <color name="coin_color">#FFFFA726</color>
+    <color name="half_accent">#AAD81B60</color>
+
+    <color name="white">#FFFFFF</color>
+    <color name="color_transparent">#00000000</color>
+
+    <color name="black">#000000</color>
+    <color name="c_32">#323232</color>
+    <color name="c_ef">#efefef</color>
+    <color name="c_90">#909090</color>
+    <color name="c_80">#808080</color>
+    <color name="c_f5">#f5f5f5</color>
+    <color name="c_f6">#f6f6f6</color>
+    <color name="c_f8">#f8f8f8</color>
+    <color name="c_cd">#CDCDCD</color>
+    <color name="c_ddd">#ddd</color>
+    <color name="c_03A9F4">#03A9F4</color>
+    <color name="bg_gray">#f7f6f4</color>
+    <color name="color_red">#FE6072</color>
+    <color name="c_day3">#499bff</color>
+    <color name="c_day5">#f7b55e</color>
+    <color name="c_day15">#FE6072</color>
+
+
+    <color name="w1">#499bff</color>
+    <color name="w2">#f1735d</color>
+    <color name="w3">#f7b55e</color>
+    <color name="w4">#1eb884</color>
+    <color name="w5">#fe6072</color>
+
+
+    <color name="c_a432">#A4A3A2</color>
+    <color name="c_66">#666666</color>
+    <color name="c_ee">#eeeeee</color>
+</resources>

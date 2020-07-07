@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="holder"
+            type="com.yk.demo.wan.android.ui.dialog.RegisterDialogFragment" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/dialog_bg_with_padding"
+        android:gravity="center_horizontal">
+
+        <ImageView
+            android:id="@+id/dismiss_dialog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@null"
+            android:onClick="@{holder::close}"
+            android:src="@drawable/ic_close_grey_24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/register_avatar"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:contentDescription="@null"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/dismiss_dialog"
+            bind:circleImg="@{@drawable/ava_taonce}"
+            tools:src="@drawable/ava_taonce" />
+
+        <EditText
+            android:id="@+id/user_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/input_bg"
+            android:ellipsize="start"
+            android:hint="@string/username_hint"
+            android:inputType="text"
+            android:padding="8dp"
+            android:singleLine="true"
+            android:textSize="14sp"
+            app:layout_constraintTop_toBottomOf="@id/register_avatar"
+            tools:ignore="Autofill,LabelFor" />
+
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/input_bg"
+            android:ellipsize="start"
+            android:hint="@string/password_hint"
+            android:inputType="textPassword"
+            android:padding="8dp"
+            android:singleLine="true"
+            android:textSize="14sp"
+            app:layout_constraintTop_toBottomOf="@id/user_name"
+            tools:ignore="Autofill,LabelFor" />
+
+        <EditText
+            android:id="@+id/repass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/input_bg"
+            android:ellipsize="start"
+            android:hint="@string/repass_hint"
+            android:inputType="textPassword"
+            android:padding="8dp"
+            android:singleLine="true"
+            android:textSize="14sp"
+            app:layout_constraintTop_toBottomOf="@id/password"
+            tools:ignore="Autofill,LabelFor" />
+
+        <Button
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:onClick="@{holder::register}"
+            android:text="@string/register_text"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@id/repass" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="ts_text_base">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:shadowColor">#80ffffff</item>
+        <item name="android:shadowDx">0.0</item>
+        <item name="android:shadowDy">0.0</item>
+        <!--<item name="android:lineSpacingExtra">1.0dp</item>-->
+        <item name="android:shadowRadius">0.0</item>
+    </style>
+
+    <style name="ts_33_9" parent="@style/ts_text_base">
+        <item name="android:textSize">9.0sp</item>
+        <item name="android:textColor">#ff333333</item>
+    </style>
+
+    <style name="ts_00_10" parent="@style/ts_text_base">
+        <item name="android:textSize">10.0sp</item>
+        <item name="android:textColor">#ff000000</item>
+    </style>
+
+    <style name="ts_00_12" parent="@style/ts_text_base">
+        <item name="android:textSize">12.0sp</item>
+        <item name="android:textColor">#ff000000</item>
+    </style>
+
+    <style name="ts_00_14" parent="@style/ts_text_base">
+        <item name="android:textSize">14.0sp</item>
+        <item name="android:textColor">#ff000000</item>
+    </style>
+
+    <style name="ts_00_16" parent="@style/ts_text_base">
+        <item name="android:textSize">16.0sp</item>
+        <item name="android:textColor">#ff000000</item>
+    </style>
+
+    <style name="ts_00_18" parent="@style/ts_text_base">
+        <item name="android:textSize">18.0sp</item>
+        <item name="android:textColor">#ff000000</item>
+    </style>
+
+    <style name="ts_00_20" parent="@style/ts_text_base">
+        <item name="android:textSize">20.0sp</item>
+        <item name="android:textColor">#ff000000</item>
+    </style>
+
+    <style name="ts_00_23" parent="@style/ts_text_base">
+        <item name="android:textSize">23.0sp</item>
+        <item name="android:textColor">#ff000000</item>
+    </style>
+
+    <style name="ts_00_27" parent="@style/ts_text_base">
+        <item name="android:textSize">27.0sp</item>
+        <item name="android:textColor">#ff000000</item>
+    </style>
+
+    <style name="ts_32_16" parent="@style/ts_text_base">
+        <item name="android:textSize">16.0sp</item>
+        <item name="android:textColor">@color/c_32</item>
+    </style>
+
+    <style name="ts_32_12" parent="@style/ts_text_base">
+        <item name="android:textSize">12.0sp</item>
+        <item name="android:textColor">@color/c_32</item>
+    </style>
+
+    <style name="ts_90_12" parent="@style/ts_text_base">
+        <item name="android:textSize">12.0sp</item>
+        <item name="android:textColor">@color/c_90</item>
+    </style>
+
+    <style name="common_btn" parent="@style/ts_text_base">
+        <!--        <item name="android:background">@drawable/shape_common_btn</item>-->
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">17sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_marginBottom">20dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">41dp</item>
+        <item name="android:layout_marginLeft">41dp</item>
+        <item name="android:layout_marginRight">41dp</item>
+    </style>
+
+    <style name="common_line">
+        <item name="android:background">@color/c_ef</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0.6dp</item>
+    </style>
+
+
+</resources>

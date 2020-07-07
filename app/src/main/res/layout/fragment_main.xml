@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="holder"
+            type="com.yk.demo.wan.android.ui.main.MainFragment" />
+
+        <variable
+            name="viewModel"
+            type="com.yk.demo.wan.android.ui.main.MainViewModel" />
+
+        <variable
+            name="adapter"
+            type="com.yk.demo.wan.android.base.BaseFragmentPagerAdapter" />
+
+        <variable
+            name="listener"
+            type="com.youth.banner.listener.OnBannerListener" />
+
+        <variable
+            name="limit"
+            type="Integer" />
+
+        <variable
+            name="transformer"
+            type="androidx.viewpager.widget.ViewPager.PageTransformer" />
+    </data>
+
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/drawer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipChildren="false"
+            android:orientation="vertical">
+
+            <com.youth.banner.Banner
+                android:id="@+id/banner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/image_place_holder"
+                app:banner_default_image="@drawable/image_place_holder"
+                app:layout_constraintTop_toTopOf="parent"
+                bind:bannerClick="@{listener}"
+                bind:banners="@{viewModel.banners}" />
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/main_page"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="30dp"
+                android:layout_marginBottom="12dp"
+                android:clipChildren="false"
+                android:overScrollMode="never"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/banner"
+                bind:adapter="@{adapter}"
+                bind:limitOffset="@{limit}"
+                bind:reversed="@{true}"
+                bind:transformer="@{transformer}" />
+
+            <com.github.clans.fab.FloatingActionMenu
+                android:id="@+id/float_menu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="30dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:menu_colorNormal="@color/colorAccent"
+                app:menu_fab_size="mini"
+                app:menu_openDirection="up">
+
+                <com.github.clans.fab.FloatingActionButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="@{holder::searchArticles}"
+                    android:src="@drawable/ic_search_white_24dp"
+                    app:fab_colorNormal="@color/colorAccent"
+                    app:fab_size="mini" />
+
+                <com.github.clans.fab.FloatingActionButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="@{holder::openSettings}"
+                    android:src="@drawable/ic_settings_white_24dp"
+                    app:fab_colorNormal="@color/colorAccent"
+                    app:fab_size="mini" />
+            </com.github.clans.fab.FloatingActionMenu>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/user_profile_drawer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:fitsSystemWindows="true"
+            android:overScrollMode="never"
+            app:menu="@menu/user_profile_menu" />
+    </androidx.drawerlayout.widget.DrawerLayout>
+</layout>
